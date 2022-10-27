@@ -8,12 +8,13 @@ import datetime
 
 DOMAINS = ['politica', 'social', 'cultura', 'regionale', 'economic-intern', 'justitie', 'educatie-stiinta', 'eveniment', 'sanatate', 'mediu', 'politica-externa', 'romania-in-lume', 'stiintatehnica', 'economic-extern', 'mondorama', 'life', 'planeta']
 END_DATE = datetime.datetime.strptime('2021-11-01', "%Y-%m-%d").date()
-NUMBER_OF_NEWS_PER_CATEGORY = 100
+NUMBER_OF_NEWS_PER_CATEGORY = 1000
 
 
 # load data
 data = {}
 for domain in DOMAINS:
+    print(f"Loading {domain}...")
     file = f'raw_{domain}.json'
     if os.path.exists(file):
         with open(file, 'r', encoding="utf8") as f:
